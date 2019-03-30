@@ -222,7 +222,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200527844}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4040fbde8ff4b894c9b1947a33756272, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -298,6 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402619220}
+  - component: {fileID: 402619221}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -322,6 +323,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &402619221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402619219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807c3aaff4f25e44882fa246093457d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 735503760}
+  resetTimer: 5
 --- !u!1 &504063773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0,
@@ -569,6 +584,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bola: {fileID: 200527844}
   playerCamera: {fileID: 504063773}
+  distanciaBola: 2
+  forcaArremesso: 550
+  segurandoBola: 1
 --- !u!1 &1144870433
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     public GameObject bola;
     public GameObject playerCamera;
     public float distanciaBola = 2f;
+    public float forcaArremesso = 550f;
+    public bool segurandoBola = true;
+
     //método Start é executado apenas na criação do objeto
     void Start()
     {
@@ -16,6 +19,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bola.transform.position = playerCamera.transform.position + playerCamera.transform.forward * distanciaBola;
+        if(segurandoBola){
+            bola.transform.position = playerCamera.transform.position + playerCamera.transform.forward * distanciaBola;
+            if(Input.GetMouseButtonDown(0)){
+                segurandoBola = false;
+                bola.GetComponent<Rigidbody>().useGravity = true;
+                bola.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * forcaArremesso);
+            }
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject bola;
+    public Bola bola;
     public GameObject playerCamera;
     public float distanciaBola = 2f;
     public float forcaArremesso = 550f;
@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
         if(segurandoBola){
             bola.transform.position = playerCamera.transform.position + playerCamera.transform.forward * distanciaBola;
             if(Input.GetMouseButtonDown(0)){
+                bola.AtivarTrilha();
                 segurandoBola = false;
                 bola.GetComponent<Rigidbody>().useGravity = true;
                 bola.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * forcaArremesso);
